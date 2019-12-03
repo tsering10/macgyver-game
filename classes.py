@@ -14,9 +14,9 @@ class Maze:
     def maze_generator(self):
 
         # Opening of file
-        with open(self.filename, "r") as f:
+        with open(self.filename, "r") as file_maze:
             structure_level = []
-            for line in f:
+            for line in file_maze:
                 line_level = []
                 for sprite in line:
                     if sprite != '\n':
