@@ -4,7 +4,7 @@
 import pygame
 from pygame.locals import *
 from classes import *
-from contants import *
+from constants import *
 
 
 def main():
@@ -12,19 +12,19 @@ def main():
     pygame.init()
 
     # create the display surface object of specific dimension i.e window_size
-    window = pygame.display.set_mode((window_size, window_size))
+    window = pygame.display.set_mode((WINDOW_SIZE, WINDOW_SIZE))
 
     # window icon
-    window_icon = pygame.image.load(image_icon)
+    window_icon = pygame.image.load(IMAGE_ICON)
     pygame.display.set_icon(window_icon)
 
     # set the pygame window name
-    pygame.display.set_caption(window_title)
+    pygame.display.set_caption(WINDOW_TITLE)
 
     start_game = 1
     while start_game:
         # loading the welcome window
-        window.blit(welcome, (0, 0))
+        window.blit(WELCOME, (0, 0))
 
         # update the display using flip
         pygame.display.flip()
@@ -87,9 +87,9 @@ def main():
                     elif event.key == K_DOWN:
                         mg.control('down')
 
-            window.blit(floor, (0, 0))
+            window.blit(FLOOR, (0, 0))
             level.display(window)
-            window.blit(hero, (mg.x, mg.y))
+            window.blit(HERO, (mg.x, mg.y))
             pygame.display.flip()
 
             # final destination
@@ -97,5 +97,5 @@ def main():
                 play_game = 0
 
 
-if __name__ == "__main__":  # Ignored.
+if __name__ == "__main__":
     main()
