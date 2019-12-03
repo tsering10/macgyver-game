@@ -1,6 +1,6 @@
+#!/usr/bin/env python3
+
 import pygame
-
-
 pygame.display.init()
 pygame.display.set_mode()
 

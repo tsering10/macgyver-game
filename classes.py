@@ -1,6 +1,7 @@
+#!/usr/bin/env python3
 import pygame
 from pygame.locals import *
-from contants import *
+from constants import *
 
 
 class Maze:
@@ -28,14 +29,14 @@ class Maze:
         for line in self.structure:
             num_case = 0
             for sprite in line:
-                x = num_case * matrix_size
-                y = num_line * matrix_size
+                x = num_case * MATRIX_SIZE
+                y = num_line * MATRIX_SIZE
                 if sprite == 'm':  # m = wall
-                    window.blit(wall, (x, y))
+                    window.blit(WALL, (x, y))
                 elif sprite == 'd':  # d = start
-                    window.blit(depart, (x, y))
+                    window.blit(DEPART, (x, y))
                 elif sprite == 'F':  # F = destination
-                    window.blit(destination, (x, y))
+                    window.blit(DESTINATION, (x, y))
                 num_case += 1
             num_line += 1
 
@@ -55,30 +56,30 @@ class Player:
         # right movement
         if direction == 'right':
             # not go over the screen
-            if self.case_x < (matrix_length - 1):
+            if self.case_x < (MATRIX_LENGTH - 1):
                 # check the destination is not a wall
                 if self.level.structure[self.case_y][self.case_x + 1] != 'm':
                     # move over one step
                     self.case_x += 1
-                    self.x = self.case_x * matrix_size
+                    self.x = self.case_x * MATRIX_SIZE
 
         # left movement
         if direction == 'left':
             if self.case_x > 0 and self.level.structure[self.case_y][self.case_x - 1] != 'm':
                 self.case_x -= 1
-                self.x = self.case_x * matrix_size
+                self.x = self.case_x * MATRIX_SIZE
 
         # up movement
         if direction == 'up':
             if self.case_y > 0 and self.level.structure[self.case_y - 1][self.case_x] != 'm':
                 self.case_y -= 1
-                self.y = self.case_y * matrix_size
+                self.y = self.case_y * MATRIX_SIZE
 
         # down movement
         if direction == 'down':
-            if self.case_y < (matrix_length - 1) and self.level.structure[self.case_y + 1][self.case_x] != 'm':
+            if self.case_y < (MATRIX_LENGTH  - 1) and self.level.structure[self.case_y + 1][self.case_x] != 'm':
                 self.case_y += 1
-                self.y = self.case_y * matrix_size
+                self.y = self.case_y * MATRIX_SIZE
 
 
 class Items:
