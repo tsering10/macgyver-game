@@ -1,11 +1,10 @@
-
 import pygame
 from pygame.locals import *
 from contants import *
 
 
 class Maze:
-    """Class to create maze"""
+    """This is a class for  creating a maze"""
 
     def __init__(self, filename):
         self.filename = filename
@@ -42,6 +41,8 @@ class Maze:
 
 
 class Player:
+    """ This is a class for creating player in the game """
+
     def __init__(self, level):
         self.case_x = 0
         self.case_y = 0
@@ -63,21 +64,22 @@ class Player:
 
         # left movement
         if direction == 'left':
-            if self.case_x > 0:
-                if self.level.structure[self.case_y][self.case_x - 1] != 'm':
-                    self.case_x -= 1
-                    self.x = self.case_x * matrix_size
+            if self.case_x > 0 and self.level.structure[self.case_y][self.case_x - 1] != 'm':
+                self.case_x -= 1
+                self.x = self.case_x * matrix_size
 
         # up movement
         if direction == 'up':
-            if self.case_y > 0:
-                if self.level.structure[self.case_y - 1][self.case_x] != 'm':
-                    self.case_y -= 1
-                    self.y = self.case_y * matrix_size
+            if self.case_y > 0 and self.level.structure[self.case_y - 1][self.case_x] != 'm':
+                self.case_y -= 1
+                self.y = self.case_y * matrix_size
 
         # down movement
         if direction == 'down':
-            if self.case_y < (matrix_length - 1):
-                if self.level.structure[self.case_y + 1][self.case_x] != 'm':
-                    self.case_y += 1
-                    self.y = self.case_y * matrix_size
+            if self.case_y < (matrix_length - 1) and self.level.structure[self.case_y + 1][self.case_x] != 'm':
+                self.case_y += 1
+                self.y = self.case_y * matrix_size
+
+
+class Items:
+    pass

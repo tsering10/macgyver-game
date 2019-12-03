@@ -1,24 +1,31 @@
+
+# import pygame module in this program
+
 import pygame
 from pygame.locals import *
 from classes import *
 from contants import *
 
+
+# activate the pygame library
 pygame.init()
 
-# Opening of the pygame window
+# create the display surface object of specific dimension i.e window_size
 window = pygame.display.set_mode((window_size, window_size))
 
 # window icon
 window_icon = pygame.image.load(image_icon)
 pygame.display.set_icon(window_icon)
-# window caption
+
+# set the pygame window name
 pygame.display.set_caption(window_title)
 
 start_game = 1
 while start_game:
-    # loading of the welcome window
+    # loading the welcome window
     window.blit(welcome, (0, 0))
 
+    # update the display using flip
     pygame.display.flip()
 
     # setting the following variables for each loop
@@ -30,6 +37,8 @@ while start_game:
         pygame.time.Clock().tick(30)
 
         for event in pygame.event.get():
+
+            # if event object type is QUIT ,KEY DOWN and K_ESCAPE then quitting the pygame and program both
 
             if event.type == QUIT or event.type == KEYDOWN and event.key == K_ESCAPE:
                 play_home = 0
@@ -67,7 +76,7 @@ while start_game:
                 if event.key == K_ESCAPE:
                     play_game = 0
 
-                # movement of the character
+                # movement of the player
                 elif event.key == K_RIGHT:
                     mg.control('right')
                 elif event.key == K_LEFT:
@@ -77,12 +86,11 @@ while start_game:
                 elif event.key == K_DOWN:
                     mg.control('down')
 
-        # display new position
         window.blit(floor, (0, 0))
         level.display(window)
         window.blit(hero, (mg.x, mg.y))
         pygame.display.flip()
 
-        # win
+        # final destination
         if level.structure[mg.case_y][mg.case_x] == 'F':
             play_game = 0
