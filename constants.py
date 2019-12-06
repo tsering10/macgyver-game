@@ -21,3 +21,9 @@ DESTINATION = pygame.image.load('images/destination.png').convert_alpha()
 WELCOME = pygame.image.load('images/home.jpg').convert()
 FLOOR = pygame.image.load('images/floor.jpg').convert()
 HERO = pygame.image.load('images/hero.png').convert()
+
+# setting item parameters
+
+NEEDLE = pygame.image.load('images/needle.jpg').convert()
+TUBE = pygame.image.load('images/tube.jpg').convert()
+ETHER = pygame.image.load('images/ether.png').convert()
