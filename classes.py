@@ -2,6 +2,9 @@
 import pygame
 from pygame.locals import *
 from constants import *
+import random
+import os
+
 
 
 class Maze:
@@ -14,15 +17,19 @@ class Maze:
     def maze_generator(self):
 
         # Opening of file
-        with open(self.filename, "r") as file_maze:
-            structure_level = []
-            for line in file_maze:
-                line_level = []
-                for sprite in line:
-                    if sprite != '\n':
-                        line_level.append(sprite)
-                structure_level.append(line_level)
-            self.structure = structure_level
+        try:
+            with open(self.filename, "r") as file_maze:
+                structure_level = []
+                for line in file_maze:
+                    line_level = []
+                    for sprite in line:
+                        if sprite != '\n':
+                            line_level.append(sprite)
+                    structure_level.append(line_level)
+                self.structure = structure_level
+        except IOError:
+            print("Not able to open the file {}.txt".format(self.filename))
+            os.exit(1)
 
     def display(self, window):
         num_line = 0
@@ -37,6 +44,8 @@ class Maze:
                     window.blit(DEPART, (x, y))
                 elif sprite == 'F':  # F = destination
                     window.blit(DESTINATION, (x, y))
+                elif sprite == '0':
+                    window.blit(FLOOR,(x,y))
                 num_case += 1
             num_line += 1
 
@@ -83,4 +92,18 @@ class Player:
 
 
 class Items:
-    pass
+    def __init__(self, structure):
+        self.structure = structure
+        self.case_x = 0
+        self.case_y = 0
+        self.x = 0
+        self.y = 0
+
+    def items_position(self):
+        while self.structure[self.case_y][self.case_x] != "0":
+            self.case_x = random.randint(0, 14)
+            self.case_y = random.randint(0, 14)
+            self.x = self.case_x * MATRIX_SIZE
+            self.y = self.case_y * MATRIX_SIZE
+
+

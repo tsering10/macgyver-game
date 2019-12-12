@@ -5,9 +5,15 @@ import pygame
 from pygame.locals import *
 from classes import *
 from constants import *
+from random import *
+from items import *
 
 
 def main():
+    pygame.font.init()  # you have to call this at the start,
+    # if you want to use this module.
+    myfont = pygame.font.SysFont('Comic Sans MS', 30)
+
     # activate the pygame library
     pygame.init()
 
@@ -61,6 +67,9 @@ def main():
             level.display(window)
             # creating  player object
             mg = Player(level)
+            item_1, item_2, item_3 = prep_items(level.structure)
+
+            item_count = 0
 
         while play_game:
 
@@ -87,14 +96,35 @@ def main():
                     elif event.key == K_DOWN:
                         mg.control('down')
 
+                if mg.case_x == item_1.case_x and mg.case_y == item_1.case_y:
+                    item_1.case_x = 0
+                    item_1.case_y = 15
+                    item_count += 1
+                if mg.case_x == item_2.case_x and mg.case_y == item_2.case_y:
+                    item_2.case_x = 1
+                    item_2.case_y = 15
+                    item_count += 1
+                if mg.case_x == item_3.case_x and mg.case_y == item_3.case_y:
+                    item_3.case_x = 2
+                    item_3.case_y = 15
+                    item_count += 1
+
             window.blit(FLOOR, (0, 0))
             level.display(window)
             window.blit(HERO, (mg.x, mg.y))
+            window.blit(NEEDLE, (item_1.case_x * MATRIX_SIZE, item_1.case_y * MATRIX_SIZE))
+            window.blit(TUBE, (item_2.case_x * MATRIX_SIZE, item_2.case_y * MATRIX_SIZE))
+            window.blit(ETHER, (item_3.case_x * MATRIX_SIZE, item_3.case_y * MATRIX_SIZE))
+            textsurface = myfont.render('Some Text', False, (0, 0, 0))
+            window.blit(textsurface, (0, 0))
+
             pygame.display.flip()
 
             # final destination
-            if level.structure[mg.case_y][mg.case_x] == 'F':
-                play_game = 0
+            if level.structure[mg.case_y][mg.case_x] == 'F' and item_count == 3:
+                window.blit(WIN, (0, 0))
+                pygame.display.flip()
+                # play_game = 0
 
 
 if __name__ == "__main__":
