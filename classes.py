@@ -143,7 +143,7 @@ class Items:
 
         Parameters:
                   structure : list.
-         """
+        """
         # Initialising  item  position in boxes and pixels
         self.structure = structure
         self.case_x = 0

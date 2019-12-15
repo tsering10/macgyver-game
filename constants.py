@@ -24,7 +24,7 @@ WELCOME = pygame.image.load('images/home.jpg').convert()
 FLOOR = pygame.image.load('images/floor.jpg').convert()
 HERO = pygame.image.load('images/hero.png').convert()
 WIN = pygame.image.load('images/you_win.jpg').convert()
-LOSS = pygame.image.load('images/you_win.jpg').convert()
+LOSS = pygame.image.load('images/you_lost.jpg').convert()
 
 # setting item parameters
 
