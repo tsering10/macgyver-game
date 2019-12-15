@@ -106,7 +106,7 @@ def main():
 
             # window.blit(FLOOR, (0, 0))
             level.display(window)
-            window.blit(HERO, (mg.x, mg.y))
+            window.blit(HERO, (mg.x_value, mg.y_value))
 
             window.blit(NEEDLE, (item_1.case_x * MATRIX_SIZE, item_1.case_y * MATRIX_SIZE))
             window.blit(TUBE, (item_2.case_x * MATRIX_SIZE, item_2.case_y * MATRIX_SIZE))
