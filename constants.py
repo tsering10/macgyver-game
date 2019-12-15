@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""constants for the game macgyver-game"""
 
 import pygame
 pygame.display.init()

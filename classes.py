@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
+"""Classes for the game macgyver-game"""
+
 # import all the required libraries
-import os
+import sys
 import random
 from constants import *
 
@@ -41,11 +43,11 @@ class Maze:
                 self.structure = structure_level
         except IOError:
             print("Not able to open the file {}.txt".format(self.filename))
-            os.exit(1)
+            sys.exit()
 
     def display(self, window):
         """
-        Method for displaying the maze  according the the list resturn by the previous function
+        Method for displaying the maze  according the the list return by the previous function
 
 
         Parameters:
@@ -75,9 +77,7 @@ class Maze:
 class Player:
     """
         This is a class for creating character in the game.
-
-
-     """
+    """
 
     def __init__(self, level):
         """
@@ -99,9 +99,7 @@ class Player:
 
         Parameters:
          direction: constants  used to represent keyboard keys.
-
-
-         """
+        """
 
         # right movement
         if direction == 'right':
@@ -135,9 +133,8 @@ class Player:
 class Items:
     """
         This is a class for creating items in the game.
-
-
     """
+
     def __init__(self, structure):
         """
         The constructor for Items  class.
@@ -155,8 +152,6 @@ class Items:
     def items_position(self):
         """
         The method to set item positions on the maze.
-
-
         """
         while self.structure[self.case_y][self.case_x] != "0":
             self.case_x = random.randint(0, 14)

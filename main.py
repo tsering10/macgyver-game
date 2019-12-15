@@ -1,15 +1,15 @@
-#!/usr/bin/env python3
-# import pygame module in this program
+#!/usr/bin/python3
+# -*- coding: Utf-8 -*
 
 import pygame
 from pygame.locals import *
 from classes import *
 from constants import *
-from random import *
 from items import *
 
 
 def main():
+    """The main function"""
 
     # activate the pygame library
     pygame.init()
@@ -111,8 +111,6 @@ def main():
             window.blit(NEEDLE, (item_1.case_x * MATRIX_SIZE, item_1.case_y * MATRIX_SIZE))
             window.blit(TUBE, (item_2.case_x * MATRIX_SIZE, item_2.case_y * MATRIX_SIZE))
             window.blit(ETHER, (item_3.case_x * MATRIX_SIZE, item_3.case_y * MATRIX_SIZE))
-            # textsurface = myfont.render('Some Text', False, (0, 0, 0))
-            # window.blit(textsurface, (0, 0))
 
             pygame.display.flip()
 
