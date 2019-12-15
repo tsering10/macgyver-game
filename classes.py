@@ -6,7 +6,6 @@ import random
 import os
 
 
-
 class Maze:
     """This is a class for  creating a maze"""
 
@@ -45,7 +44,7 @@ class Maze:
                 elif sprite == 'F':  # F = destination
                     window.blit(DESTINATION, (x, y))
                 elif sprite == '0':
-                    window.blit(FLOOR,(x,y))
+                    window.blit(FLOOR, (x, y))
                 num_case += 1
             num_line += 1
 
@@ -86,7 +85,7 @@ class Player:
 
         # down movement
         if direction == 'down':
-            if self.case_y < (MATRIX_LENGTH  - 1) and self.level.structure[self.case_y + 1][self.case_x] != 'm':
+            if self.case_y < (MATRIX_LENGTH - 1) and self.level.structure[self.case_y + 1][self.case_x] != 'm':
                 self.case_y += 1
                 self.y = self.case_y * MATRIX_SIZE
 
@@ -103,7 +102,5 @@ class Items:
         while self.structure[self.case_y][self.case_x] != "0":
             self.case_x = random.randint(0, 14)
             self.case_y = random.randint(0, 14)
-            self.x = self.case_x * MATRIX_SIZE
-            self.y = self.case_y * MATRIX_SIZE
-
-
+        self.x = self.case_x * MATRIX_SIZE
+        self.y = self.case_y * MATRIX_SIZE

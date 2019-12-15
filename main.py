@@ -10,15 +10,12 @@ from items import *
 
 
 def main():
-    pygame.font.init()  # you have to call this at the start,
-    # if you want to use this module.
-    myfont = pygame.font.SysFont('Comic Sans MS', 30)
 
     # activate the pygame library
     pygame.init()
 
     # create the display surface object of specific dimension i.e window_size
-    window = pygame.display.set_mode((WINDOW_SIZE, WINDOW_SIZE))
+    window = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
     # window icon
     window_icon = pygame.image.load(IMAGE_ICON)
@@ -26,11 +23,10 @@ def main():
 
     # set the pygame window name
     pygame.display.set_caption(WINDOW_TITLE)
+    window.blit(WELCOME, (0, 0))
 
     start_game = 1
     while start_game:
-        # loading the welcome window
-        window.blit(WELCOME, (0, 0))
 
         # update the display using flip
         pygame.display.flip()
@@ -51,16 +47,16 @@ def main():
                     play_home = 0
                     play_game = 0
                     start_game = 0
-                    choice = 0
+                    maze_choice = 0
 
                 elif event.type == KEYDOWN:
                     if event.key == K_SPACE:
                         play_home = 0
-                        choice = 'maze'
+                        maze_choice = 'maze'
 
-        if choice != 0:
+        if maze_choice != 0:
             # creating maze object
-            level = Maze(choice)
+            level = Maze(maze_choice)
             # calling maze generator method
             level.maze_generator()
             # calling display method
@@ -68,7 +64,6 @@ def main():
             # creating  player object
             mg = Player(level)
             item_1, item_2, item_3 = prep_items(level.structure)
-
             item_count = 0
 
         while play_game:
@@ -109,23 +104,31 @@ def main():
                     item_3.case_y = 15
                     item_count += 1
 
-            window.blit(FLOOR, (0, 0))
+            # window.blit(FLOOR, (0, 0))
             level.display(window)
             window.blit(HERO, (mg.x, mg.y))
+
             window.blit(NEEDLE, (item_1.case_x * MATRIX_SIZE, item_1.case_y * MATRIX_SIZE))
             window.blit(TUBE, (item_2.case_x * MATRIX_SIZE, item_2.case_y * MATRIX_SIZE))
             window.blit(ETHER, (item_3.case_x * MATRIX_SIZE, item_3.case_y * MATRIX_SIZE))
-            textsurface = myfont.render('Some Text', False, (0, 0, 0))
-            window.blit(textsurface, (0, 0))
+            # textsurface = myfont.render('Some Text', False, (0, 0, 0))
+            # window.blit(textsurface, (0, 0))
 
             pygame.display.flip()
 
             # final destination
-            if level.structure[mg.case_y][mg.case_x] == 'F' and item_count == 3:
+            if level.structure[mg.case_x][mg.case_y] == 'F' and item_count == 3:
                 window.blit(WIN, (0, 0))
                 pygame.display.flip()
-                # play_game = 0
+                play_game = 0
+                play_home = 1
+            elif level.structure[mg.case_x][mg.case_y] == 'F' and item_count != 3:
+                window.blit(LOSS, (0, 0))
+                play_game = 0
+                play_home = 1
+
+    pygame.quit()
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

@@ -6,8 +6,10 @@ pygame.display.set_mode()
 
 # window and maze parameters
 MATRIX_LENGTH = 15
-MATRIX_SIZE = 30
-WINDOW_SIZE = MATRIX_LENGTH * MATRIX_SIZE
+MATRIX_HEIGHT = 16
+MATRIX_SIZE = 32
+SCREEN_WIDTH = MATRIX_LENGTH * MATRIX_SIZE
+SCREEN_HEIGHT = MATRIX_HEIGHT * MATRIX_SIZE
 
 # setting window title and icon
 WINDOW_TITLE = "Mcgver  Labyrinthe"
@@ -22,6 +24,7 @@ WELCOME = pygame.image.load('images/home.jpg').convert()
 FLOOR = pygame.image.load('images/floor.jpg').convert()
 HERO = pygame.image.load('images/hero.png').convert()
 WIN = pygame.image.load('images/you_win.jpg').convert()
+LOSS = pygame.image.load('images/you_win.jpg').convert()
 
 # setting item parameters
 
