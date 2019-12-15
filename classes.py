@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-import pygame
-from pygame.locals import *
-from constants import *
-import random
+
+# import all the required libraries
 import os
+import random
+from constants import *
 
 
 class Maze:
@@ -49,7 +49,8 @@ class Maze:
 
 
         Parameters:
-           window: This function will create a display Surface. The arguments passed in are requests for a display type
+           window: This function will create a display Surface.
+                   The arguments passed in are requests for a display type
         """
         num_line = 0
         for line in self.structure:
@@ -57,16 +58,16 @@ class Maze:
             # loop through the lines
             for sprite in line:
                 # calculate the real position in pixel
-                x = num_case * MATRIX_SIZE
-                y = num_line * MATRIX_SIZE
+                x_val = num_case * MATRIX_SIZE
+                y_val = num_line * MATRIX_SIZE
                 if sprite == 'm':  # m = Wall
-                    window.blit(WALL, (x, y))
+                    window.blit(WALL, (x_val, y_val))
                 elif sprite == 'd':  # d = Start
-                    window.blit(DEPART, (x, y))
+                    window.blit(DEPART, (x_val, y_val))
                 elif sprite == 'F':  # F = Destination
-                    window.blit(DESTINATION, (x, y))
+                    window.blit(DESTINATION, (x_val, y_val))
                 elif sprite == '0':
-                    window.blit(FLOOR, (x, y))  # 0 = Floor
+                    window.blit(FLOOR, (x_val, y_val))  # 0 = Floor
                 num_case += 1
             num_line += 1
 
@@ -88,16 +89,16 @@ class Player:
         # player position in boxes and pixels
         self.case_x = 0
         self.case_y = 0
-        self.x = 0
-        self.y = 0
+        self.x_value = 0
+        self.y_value = 0
         self.level = level
 
     def control(self, direction):
         """
-                The method is use to control the movement of the player character .
+        The method is use to control the movement of the player character .
 
-                Parameters:
-                    direction: constants (from pygame.localspygame constants) used to represent keyboard keys.
+        Parameters:
+         direction: constants  used to represent keyboard keys.
 
 
          """
@@ -110,25 +111,25 @@ class Player:
                 if self.level.structure[self.case_y][self.case_x + 1] != 'm':
                     # move over one step
                     self.case_x += 1
-                    self.x = self.case_x * MATRIX_SIZE
+                    self.x_value = self.case_x * MATRIX_SIZE
 
         # left movement
         if direction == 'left':
             if self.case_x > 0 and self.level.structure[self.case_y][self.case_x - 1] != 'm':
                 self.case_x -= 1
-                self.x = self.case_x * MATRIX_SIZE
+                self.x_value = self.case_x * MATRIX_SIZE
 
         # up movement
         if direction == 'up':
             if self.case_y > 0 and self.level.structure[self.case_y - 1][self.case_x] != 'm':
                 self.case_y -= 1
-                self.y = self.case_y * MATRIX_SIZE
+                self.y_value = self.case_y * MATRIX_SIZE
 
         # down movement
         if direction == 'down':
             if self.case_y < (MATRIX_LENGTH - 1) and self.level.structure[self.case_y + 1][self.case_x] != 'm':
                 self.case_y += 1
-                self.y = self.case_y * MATRIX_SIZE
+                self.y_value = self.case_y * MATRIX_SIZE
 
 
 class Items:
@@ -148,8 +149,8 @@ class Items:
         self.structure = structure
         self.case_x = 0
         self.case_y = 0
-        self.x = 0
-        self.y = 0
+        self.x_value = 0
+        self.y_value = 0
 
     def items_position(self):
         """
@@ -160,5 +161,5 @@ class Items:
         while self.structure[self.case_y][self.case_x] != "0":
             self.case_x = random.randint(0, 14)
             self.case_y = random.randint(0, 14)
-        self.x = self.case_x * MATRIX_SIZE
-        self.y = self.case_y * MATRIX_SIZE
+        self.x_value = self.case_x * MATRIX_SIZE
+        self.y_value = self.case_y * MATRIX_SIZE
