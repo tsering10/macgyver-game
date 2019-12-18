@@ -47,7 +47,7 @@ class Maze:
 
     def display(self, window):
         """
-        Method for displaying the maze  according the the list return by the previous function
+        Method for displaying the maze according the the list return by the previous function
 
 
         Parameters:
@@ -95,10 +95,10 @@ class Player:
 
     def control(self, direction):
         """
-        The method is use to control the movement of the player character .
+        The method is use to control the movement of the player  .
 
         Parameters:
-         direction: constants  used to represent keyboard keys.
+         direction: constants used to represent keyboard keys.
         """
 
         # right movement

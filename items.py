@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # import all the required libraries
+""" Function to create items """
 
-
-from classes import *
+from classes import Items
 
 
 def prep_items(structure):
