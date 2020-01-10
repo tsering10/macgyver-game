@@ -124,7 +124,7 @@ def main():
                 window.blit(LOSS, (0, 0))
                 play_game = 0
                 play_home = 1
-
+    # Quit the game
     pygame.quit()
 
 
