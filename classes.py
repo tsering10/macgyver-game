@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
+# -*- coding: Utf-8 -*
 
 """Classes for the game macgyver-game"""
 
-# import all the required libraries
+# Import all the required libraries
 import sys
 import random
 from constants import *
@@ -24,7 +25,7 @@ class Maze:
     def maze_generator(self):
         """ Method to read the maze file and creates a list with contains a list per line"""
 
-        # Opening of file
+        # Opening of the maze file
         try:
             with open(self.filename, "r") as file_maze:
                 structure_level = []
@@ -57,9 +58,9 @@ class Maze:
         num_line = 0
         for line in self.structure:
             num_case = 0
-            # loop through the lines
+            # Loop through the lines
             for sprite in line:
-                # calculate the real position in pixel
+                # Calculate the real position in pixel
                 x_val = num_case * MATRIX_SIZE
                 y_val = num_line * MATRIX_SIZE
                 if sprite == 'm':  # m = Wall
