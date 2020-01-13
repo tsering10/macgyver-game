@@ -14,6 +14,12 @@
 Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre
 ## Installation
 
+You need install Python 3.7 or later to run the game. 
+
+```
+pip install python3.7 
+```
+
 Pygame is a cross-platform set of Python modules designed for writing video games. It includes computer graphics and sound libraries designed to be used with the Python programming language. 
 
 ```
@@ -33,16 +39,16 @@ pip install pylint --upgrade
 If you want to install from a source distribution, extract the tarball and run the following command
 ```
 
-python setup.py install
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
-```bash
-pip install foobar
+Or you can follow command below on your terminal 
+```
+pip install -r requirements.txt
 ```
 
+
 ## Setup
-To run this project, install it locally using npm
+To run this project, install all the necessary libraries as mentioned above,
+
+
 
 # Library dependencies for the python code.  You need to install these with
 # `pip install -r requirements.txt` before you can run this.
