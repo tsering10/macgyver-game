@@ -39,32 +39,28 @@ pip install pylint --upgrade
 If you want to install from a source distribution, extract the tarball and run the following command
 ```
 
-Or you can follow command below on your terminal 
+Or you can follow the command below on your terminal to install library dependencies for the python code. 
 ```
 pip install -r requirements.txt
 ```
 
 
 ## Setup
-To run this project, install all the necessary libraries as mentioned above,
+To run this project, clone this repo (or fork, which you'll want to do eventually).
 
-
-
-# Library dependencies for the python code.  You need to install these with
-# `pip install -r requirements.txt` before you can run this.
-
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
+Open a terminal in the repo root directory and run:
 ```
+git clone https://github.com/tsering10/macgyver-game
+```
+In a separate terminal, to run the command below 
+```
+python3 main.py
+```
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+
