@@ -17,7 +17,7 @@ class Maze:
         The constructor for Maze class.
 
         Parameters:
-        filename : maze file in a text file format.
+        Filename : maze file in a text file format.
         """
         self.filename = filename
         self.structure = 0
@@ -52,7 +52,7 @@ class Maze:
 
 
         Parameters:
-           window: This function will create a display Surface.
+           indow: This function will create a display Surface.
                    The arguments passed in are requests for a display type
         """
         num_line = 0

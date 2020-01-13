@@ -2,7 +2,7 @@
 # -*- coding: Utf-8 -*
 
 # import all the required libraries
-""" Function to create items """
+""" Function to create items in the macgyver-game"""
 
 from classes import Items
 
