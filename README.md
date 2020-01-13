@@ -1,4 +1,4 @@
-# macgyver-game
+# Macgyver-game
 
 e Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre
 ## Installation
@@ -23,6 +23,9 @@ pip install foobar
 
 ## Setup
 To run this project, install it locally using npm
+
+# Library dependencies for the python code.  You need to install these with
+# `pip install -r requirements.txt` before you can run this.
 
 ```python
 import foobar
