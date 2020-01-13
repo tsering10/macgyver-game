@@ -1,6 +1,15 @@
 #!/usr/bin/python3
 # -*- coding: Utf-8 -*
-"""The main function or the start point  for the game macgyver-game"""
+"""
+The main function or the start point  for the game macgyver-game
+
+Python scripts:  main.py, items.py, classes.py, constants.py,
+
+Files: maze, .gitignore and images
+
+
+
+"""
 
 import pygame
 from pygame.locals import *
