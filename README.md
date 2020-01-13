@@ -22,7 +22,8 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 pip install foobar
 ```
 
-## Usage
+## Setup
+To run this project, install it locally using npm
 
 ```python
 import foobar
