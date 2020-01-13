@@ -71,7 +71,7 @@ def main():
             level.maze_generator()
             # Calling the display method
             level.display(window)
-            # Creating  player object
+            # Creating  player object  = mg
             mg = Player(level)
             item_1, item_2, item_3 = prep_items(level.structure)
             item_count = 0
