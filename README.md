@@ -1,7 +1,6 @@
-# Foobar
+# macgyver-game
 
-Foobar is a Python library for dealing with word pluralization.
-
+e Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre
 ## Installation
 ```
 Pylint is a Python static code analysis tool which looks for programming errors, helps enforcing a coding standard, sniffs for code smells and offers simple refactoring suggestions. 
