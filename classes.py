@@ -41,7 +41,8 @@ class Maze:
                     # append the lines to the list structure_level
                     structure_level.append(line_level)
                     # assign or save to structure
-                self.structure = structure_level
+                    self.structure = structure_level
+
         except IOError:
             print("Not able to open the file {}.txt".format(self.filename))
             sys.exit()
@@ -52,7 +53,7 @@ class Maze:
 
 
         Parameters:
-           indow: This function will create a display Surface.
+           window: This function will create a display Surface.
                    The arguments passed in are requests for a display type
         """
         num_line = 0
@@ -143,7 +144,7 @@ class Items:
         Parameters:
                   structure : list.
         """
-        # Initialising  item  position in boxes and pixels
+        # Initialising item position in boxes and pixels
         self.structure = structure
         self.case_x = 0
         self.case_y = 0

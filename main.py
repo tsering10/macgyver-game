@@ -5,7 +5,7 @@ The main function or the start point of the  macgyver-game
 
 Python scripts:  main.py, items.py, classes.py, constants.py,
 
-Files: maze, .gitignore and images
+Files: maze, .gitignore and images files
 
 
 
