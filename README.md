@@ -6,6 +6,11 @@
 
 This is the third project of the OpenClassrooms developer for python project. The logic of the game is to create a maze (labyrinth) in which the main player (MacGyver) will have to collect three objects scattered randomly in the maze (labyrinth) in order to defeat the terrible guardian and successfully escape the maze. 
 
+# Usage 
+
+You need to use the arrow keys to move.
+When you encounter any items, you will pick it up automatically. If you have all items, you can go and defeat the terrible guardian. When game is over, you can press the 'space key' to continue or if you want to quit game at any time, you press it with the "Esc" key. Enjoy the game!!! 
+.
 
 ![alt text][logo]
 
