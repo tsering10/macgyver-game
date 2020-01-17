@@ -4,7 +4,8 @@
 
 # Macgyver-game
 
-Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre
+This is the third project of the OpenClassrooms developer for python project. The logic of the game is to create a maze (labyrinth) in which the main player (MacGyver) will have to collect three objects scattered randomly in the maze (labyrinth) in order to defeat the terrible guardian and successfully escape the maze. 
+
 
 ![alt text][logo]
 
