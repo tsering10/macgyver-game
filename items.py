@@ -9,7 +9,7 @@ from classes import Items
 
 def prep_items(structure):
     """
-    The function is use for preparing of items in the game .
+    The function is use for creation of items objects in the game .
 
     Parameters:
     structure (list): list generated from the Maze class.

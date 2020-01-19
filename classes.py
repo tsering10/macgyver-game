@@ -153,7 +153,7 @@ class Items:
 
     def items_position(self):
         """
-        The method to set item positions on the maze.
+        The method to set item positions on the maze in pixel.
         """
         while self.structure[self.case_y][self.case_x] != "0":
             self.case_x = random.randint(0, 14)
