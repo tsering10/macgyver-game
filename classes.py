@@ -58,12 +58,12 @@ class Maze:
         """
         num_line = 0
         for line in self.structure:
-            num_case = 0
+            num_case = 0  # begin with the first cell
             # Loop through the lines
             for sprite in line:
                 # Calculate the real position in pixel
-                x_val = num_case * MATRIX_SIZE
-                y_val = num_line * MATRIX_SIZE
+                x_val = num_case * SPRITE_SIZE
+                y_val = num_line * SPRITE_SIZE
                 if sprite == 'm':  # m = Wall
                     window.blit(WALL, (x_val, y_val))
                 elif sprite == 'd':  # d = Start
@@ -111,38 +111,38 @@ class Player:
                 if self.level.structure[self.case_y][self.case_x + 1] != 'm':
                     # move over one step
                     self.case_x += 1
-                    self.x_value = self.case_x * MATRIX_SIZE
+                    self.x_value = self.case_x * SPRITE_SIZE
 
         # left movement
         if direction == 'left':
             if self.case_x > 0 and self.level.structure[self.case_y][self.case_x - 1] != 'm':
                 self.case_x -= 1
-                self.x_value = self.case_x * MATRIX_SIZE
+                self.x_value = self.case_x * SPRITE_SIZE
 
         # up movement
         if direction == 'up':
             if self.case_y > 0 and self.level.structure[self.case_y - 1][self.case_x] != 'm':
                 self.case_y -= 1
-                self.y_value = self.case_y * MATRIX_SIZE
+                self.y_value = self.case_y * SPRITE_SIZE
 
         # down movement
         if direction == 'down':
             if self.case_y < (MATRIX_LENGTH - 1) and self.level.structure[self.case_y + 1][self.case_x] != 'm':
                 self.case_y += 1
-                self.y_value = self.case_y * MATRIX_SIZE
+                self.y_value = self.case_y * SPRITE_SIZE
 
 
 class Items:
     """
-        This is a class for creating items in the game.
+        This is a class for defining items in the game
     """
 
     def __init__(self, structure):
         """
-        The constructor for Items  class.
+        The constructor for Items class
 
         Parameters:
-                  structure : list.
+                  structure : list
         """
         # Initialising item position in boxes and pixels
         self.structure = structure
@@ -158,5 +158,5 @@ class Items:
         while self.structure[self.case_y][self.case_x] != "0":
             self.case_x = random.randint(0, 14)
             self.case_y = random.randint(0, 14)
-        self.x_value = self.case_x * MATRIX_SIZE
-        self.y_value = self.case_y * MATRIX_SIZE
+        self.x_value = self.case_x * SPRITE_SIZE
+        self.y_value = self.case_y * SPRITE_SIZE

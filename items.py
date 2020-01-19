@@ -36,5 +36,6 @@ def prep_items(structure):
     while (item_1.case_y == item_3.case_y and item_1.case_x == item_3.case_x) or (
             item_2.case_y == item_3.case_y and item_2.case_x == item_3.case_x):
         item_3.items_position()
+
     # Return three items class objects
     return item_1, item_2, item_3

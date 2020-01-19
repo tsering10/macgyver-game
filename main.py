@@ -21,17 +21,18 @@ from items import *
 def main():
     """The main function"""
 
-    # Activate the pygame library
+    # Need to initialize pygame before using it
     pygame.init()
 
     # Create the display surface object of specific dimension i.e window_size
-    window = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+
+    window = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), RESIZABLE)
 
     # Window icon
     window_icon = pygame.image.load(IMAGE_ICON)
     pygame.display.set_icon(window_icon)
 
-    # Set the pygame window name
+    # Set the title on the window
     pygame.display.set_caption(WINDOW_TITLE)
     window.blit(WELCOME, (0, 0))
 
@@ -44,7 +45,7 @@ def main():
         # Setting the following variables for each loop
         play_game = 1
         play_home = 1
-
+        # Home page of the game
         while play_home:
 
             pygame.time.Clock().tick(30)
@@ -75,7 +76,7 @@ def main():
             mg = Player(level)
             item_1, item_2, item_3 = prep_items(level.structure)
             item_count = 0
-
+        # In the game
         while play_game:
 
             # Tracking number of frames
@@ -118,9 +119,9 @@ def main():
             level.display(window)
             window.blit(HERO, (mg.x_value, mg.y_value))
 
-            window.blit(NEEDLE, (item_1.case_x * MATRIX_SIZE, item_1.case_y * MATRIX_SIZE))
-            window.blit(TUBE, (item_2.case_x * MATRIX_SIZE, item_2.case_y * MATRIX_SIZE))
-            window.blit(ETHER, (item_3.case_x * MATRIX_SIZE, item_3.case_y * MATRIX_SIZE))
+            window.blit(NEEDLE, (item_1.case_x * SPRITE_SIZE, item_1.case_y * SPRITE_SIZE))
+            window.blit(TUBE, (item_2.case_x * SPRITE_SIZE, item_2.case_y * SPRITE_SIZE))
+            window.blit(ETHER, (item_3.case_x * SPRITE_SIZE, item_3.case_y * SPRITE_SIZE))
 
             # Update the full display Surface to the screen
             pygame.display.flip()
