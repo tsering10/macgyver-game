@@ -1,5 +1,5 @@
 Python==3.7.3
-pylint== 2.4.4
+pylint== 4.0.9
 astroid== 2.3.3
 pygame==1.9.6
 
